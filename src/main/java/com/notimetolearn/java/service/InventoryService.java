@@ -7,13 +7,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class InventoryService {
 
-    public Inventory addInventory() {
+    public Inventory fetchInventory() {
         CommonUtil.delay(500);
         return Inventory.builder()
                 .count(2).build();
     }
 
-    public CompletableFuture<Inventory> addInventoryAsync() {
+    public CompletableFuture<Inventory> fetchInventoryAsync() {
        return CompletableFuture.supplyAsync(() -> {
                CommonUtil.delay(500);
                 return Inventory.builder()
